@@ -1,0 +1,23 @@
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+    {{ message }}<br/>
+    {{count}}
+    <button @click="count=count+1">
+        Khi bấm vào button này, tăng  count  lên  1 đơn vị
+    </button>
+</div>
+
+<script>
+  const { createApp, ref } = Vue
+
+  createApp({
+    setup() {
+      const message = ref('Hello vue Tiến!')
+      return {
+        count: ref(0),
+        message
+      }
+    }
+  }).mount('#app')
+</script>
